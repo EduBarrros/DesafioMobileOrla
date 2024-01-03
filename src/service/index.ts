@@ -1,0 +1,1 @@
+export { default as TipApi } from './TipApi';

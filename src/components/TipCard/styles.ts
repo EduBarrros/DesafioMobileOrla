@@ -19,7 +19,7 @@ export const HeaderCard = styled(View)`
     width: 100%;
     flex-direction: row; 
     justify-content: flex-end;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 `
 
 export const HeaderDate = styled(Text)`
@@ -39,4 +39,5 @@ export const TitleCard = styled(Text)`
 
 export const TextAdivice = styled(Text)`
     color: #ffffff;
+    font-size: 12px;
 ` 

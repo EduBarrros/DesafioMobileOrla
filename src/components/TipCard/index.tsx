@@ -1,22 +1,15 @@
 import * as React from 'react';
 import * as S from './styles';
 
+type TipCardProps = {
+    tip: any
+}
 
-const TipCard = () => {
 
-    const cores = [
-        '#668D3C',
-        '#613318',
-        '#8F3B1B',
-        '#B99C8B',
-        '#404F24',
-    ];
-
-    const indice = Math.floor(Math.random() * cores.length);
-
+const TipCard = ({ tip }: TipCardProps) => {
 
     return (
-        <S.MainContainer backgroundColor={cores[indice]}>
+        <S.MainContainer backgroundColor={tip.item.backgroundcolor}>
             <S.HeaderCard>
                 <S.HeaderDate>
                     19 Jun
@@ -27,7 +20,7 @@ const TipCard = () => {
                     Tip
                 </S.TitleCard>
                 <S.TextAdivice>
-                    iduwhduwhduwhudhwudhwudhuwhduwhduwhdu
+                    {tip?.item.advice}
                 </S.TextAdivice>
             </S.ContentCard>
         </S.MainContainer>
