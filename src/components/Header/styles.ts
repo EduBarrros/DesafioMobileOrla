@@ -35,6 +35,8 @@ export const TitleText = styled(Text)`
 `
 
 export const OrderButtonContainer = styled(TouchableOpacity)`
+    height: 32px;
+    width: 32px;
     align-items: center;
     justify-content: center;
 `
