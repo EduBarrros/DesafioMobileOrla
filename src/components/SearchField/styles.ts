@@ -10,6 +10,7 @@ export const SearchInput = styled(TextInput)`
     margin-top: 24px;
     border-color: #c1c1c1;
     padding-left: 24px;
+    padding-right: 24px;
     background-color: #f0f0f0;
     ${Platform.OS === 'ios'
     ? `

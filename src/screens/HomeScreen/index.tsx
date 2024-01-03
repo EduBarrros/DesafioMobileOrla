@@ -10,6 +10,8 @@ const HomeScreen = () => {
 
     const [sortType, setSortType] = React.useState<"UP" | "DOWN">("DOWN")
     const [tips, setTips] = React.useState([])
+    const [filteredTips, setFilteredTips] = React.useState([])
+    const [searchText, setSearchtext] = React.useState('')
 
     React.useEffect(() => {
         sortType === "DOWN"
@@ -18,6 +20,12 @@ const HomeScreen = () => {
             :
             setTips((prevState) => [...prevState.sort((a, b) => new Date(a.createdAt).valueOf() - new Date(b.createdAt).valueOf())])
     }, [sortType])
+
+    React.useEffect(() => {
+       const filtered = tips.filter(item => item.advice.toLowerCase().includes(searchText.toLowerCase()));
+       
+       setFilteredTips(filtered)
+    }, [searchText])
 
     const GetTip = async () => {
         try {
@@ -67,9 +75,10 @@ const HomeScreen = () => {
             <S.ContentContainer>
                 <SearchField
                     placeholder='Search'
+                    onChangeText={(text: string) => setSearchtext(text)}
                 />
                 <S.CardList
-                    data={tips}
+                    data={searchText !== '' ? filteredTips : tips}
                     renderItem={(tip: any) => <TipCard tip={tip} />}
                     numColumns={2}
                     showsVerticalScrollIndicator={false}
