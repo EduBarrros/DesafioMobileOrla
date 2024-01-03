@@ -12,7 +12,7 @@ const Header = ({ sortType, onSortPress }: HeaderProps) => {
         <S.MainContainer>
             <S.UserIcon source={require("../../assets/UserPhoto.jpg")}/>
             <S.TitleText>
-                NOTE APP
+                TIPS4YOU
             </S.TitleText>
             <S.OrderButtonContainer
                 onPress={onSortPress}

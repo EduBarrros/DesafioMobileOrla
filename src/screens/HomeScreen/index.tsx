@@ -1,53 +1,12 @@
 import * as React from 'react';
 import * as S from './styles';
-import { Header, SearchField, TipCard } from '../../components';
+import { Header, SearchField, TipCard, FloatButton, EmptyState} from '../../components';
 import { StatusBar } from 'expo-status-bar';
 
 const HomeScreen = () => {
 
     const [sortType, setSortType] = React.useState<"UP" | "DOWN">("DOWN")
-
-    const fakedata = [
-        {
-
-        },
-        {
-
-        },
-        {
-
-        },
-        {
-
-        },
-        {
-
-        },
-        {
-
-        },
-        {
-
-        },
-        {
-            
-        },
-        {
-
-        },
-        {
-            
-        },
-        {
-
-        },
-        {
-            
-        },
-        {
-
-        },
-    ]
+    const [tips, setTips] = React.useState([])
 
     return (
         <S.MainContainer>
@@ -58,15 +17,17 @@ const HomeScreen = () => {
             />
             <S.ContentContainer>
                 <SearchField
-                    placeholder='Pesquisar'
+                    placeholder='Search'
                 />
                 <S.CardList
-                    data={fakedata}
+                    data={tips}
                     renderItem={() => <TipCard />}
                     numColumns={2}
                     showsVerticalScrollIndicator={false}
+                    ListEmptyComponent={() => <EmptyState />}
                 />
             </S.ContentContainer>
+            <FloatButton />
         </S.MainContainer>
     )
 }

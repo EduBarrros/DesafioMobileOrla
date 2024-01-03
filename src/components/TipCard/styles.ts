@@ -24,6 +24,7 @@ export const HeaderCard = styled(View)`
 
 export const HeaderDate = styled(Text)`
     color: #ffffff;
+    font-size: 12px;
 `
 
 export const ContentCard = styled(View)`

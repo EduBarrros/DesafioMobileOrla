@@ -32,6 +32,7 @@ export const UserIcon = styled(Image)`
 
 export const TitleText = styled(Text)`
     font-size: 20px;
+    font-weight: bold;
 `
 
 export const OrderButtonContainer = styled(TouchableOpacity)`
