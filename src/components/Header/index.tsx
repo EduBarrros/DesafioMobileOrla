@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as S from './styles';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 type HeaderProps = {
     sortType: "UP" | "DOWN"
@@ -20,9 +20,9 @@ const Header = ({ sortType, onSortPress }: HeaderProps) => {
                 {
                     sortType === "UP"
                         ?
-                        <FontAwesome5 name="sort-alpha-up" size={24} color="black" />
+                        <MaterialCommunityIcons name="sort-clock-ascending" size={32} color="black" />
                         :
-                        <FontAwesome5 name="sort-alpha-down" size={24} color="black" />
+                        <MaterialCommunityIcons name="sort-clock-descending" size={32} color="black" />
                 }
             </S.OrderButtonContainer>
         </S.MainContainer>

@@ -11,26 +11,33 @@ const HomeScreen = () => {
     const [sortType, setSortType] = React.useState<"UP" | "DOWN">("DOWN")
     const [tips, setTips] = React.useState([])
 
+    React.useEffect(() => {
+        sortType === "DOWN"
+            ?
+            setTips((prevState) => [...prevState.sort((a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf())])
+            :
+            setTips((prevState) => [...prevState.sort((a, b) => new Date(a.createdAt).valueOf() - new Date(b.createdAt).valueOf())])
+    }, [sortType])
+
     const GetTip = async () => {
         try {
             const responseTip = await TipApi.get('/advice')
-            
+
             const alreadyExists = tips.find((item) => item.id === responseTip.data.slip.id)
 
-            if(alreadyExists){
+            if (alreadyExists) {
                 Toast.show({
                     type: 'info',
                     text1: 'Opss...',
                     text2: "You already have this tip, try again."
                 });
-            }else{
+            } else {
 
                 const TipBody = {
                     ...responseTip.data.slip,
-                    backgroundcolor: ColorSelect()
+                    backgroundcolor: ColorSelect(),
+                    createdAt: new Date()
                 }
-
-                console.log('Body', TipBody)
 
                 setTips((prevstate) => [TipBody, ...prevstate])
 

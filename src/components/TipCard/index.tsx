@@ -1,15 +1,23 @@
 import * as React from 'react';
 import * as S from './styles';
+import { FormatDate } from '../../utils';
 
 type TipCardProps = {
-    tip: any
+    tip: {
+        item: {
+            id: number,
+            advice: string,
+            backgroundcolor: string
+        }
+    }
 }
-
 
 const TipCard = ({ tip }: TipCardProps) => {
 
+    const { backgroundcolor, advice } = tip.item
+
     return (
-        <S.MainContainer backgroundColor={tip.item.backgroundcolor}>
+        <S.MainContainer backgroundColor={backgroundcolor}>
             <S.HeaderCard>
                 <S.HeaderDate>
                     19 Jun
@@ -20,7 +28,7 @@ const TipCard = ({ tip }: TipCardProps) => {
                     Tip
                 </S.TitleCard>
                 <S.TextAdivice>
-                    {tip?.item.advice}
+                    {advice}
                 </S.TextAdivice>
             </S.ContentCard>
         </S.MainContainer>
