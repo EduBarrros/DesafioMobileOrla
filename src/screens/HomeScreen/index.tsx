@@ -12,6 +12,24 @@ const HomeScreen = () => {
     const [tips, setTips] = React.useState([])
     const [filteredTips, setFilteredTips] = React.useState([])
     const [searchText, setSearchtext] = React.useState('')
+    const [loading, setLoading] = React.useState(false)
+
+    React.useEffect(() => {
+        if (sortType === "UP") {
+            Toast.show({
+                type: 'info',
+                text1: 'Done',
+                text2: "Now your list is sorted by most recent tips."
+                
+            });
+        } else {
+            Toast.show({
+                type: 'info',
+                text1: 'Done',
+                text2: "Now your list is sorted by olders tips."
+            });
+        }
+    }, [sortType])
 
     React.useEffect(() => {
         sortType === "DOWN"
@@ -22,12 +40,13 @@ const HomeScreen = () => {
     }, [sortType])
 
     React.useEffect(() => {
-       const filtered = tips.filter(item => item.advice.toLowerCase().includes(searchText.toLowerCase()));
-       
-       setFilteredTips(filtered)
+        const filtered = tips.filter(item => item.advice.toLowerCase().includes(searchText.toLowerCase()));
+
+        setFilteredTips(filtered)
     }, [searchText])
 
     const GetTip = async () => {
+        setLoading(true)
         try {
             const responseTip = await TipApi.get('/advice')
 
@@ -57,12 +76,14 @@ const HomeScreen = () => {
             }
 
         } catch (error) {
+            setLoading(false)
             Toast.show({
                 type: 'error',
                 text1: 'Houston we have a problem!',
                 text2: "You can try again in a few seconds."
             });
         }
+        setLoading(false)
     }
 
     return (
@@ -85,7 +106,7 @@ const HomeScreen = () => {
                     ListEmptyComponent={() => <EmptyState />}
                 />
             </S.ContentContainer>
-            <FloatButton onPress={() => GetTip()} />
+            <FloatButton loading={loading} disabled={loading} onPress={() => GetTip()} />
         </S.MainContainer>
     )
 }

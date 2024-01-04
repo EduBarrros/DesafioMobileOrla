@@ -1,21 +1,30 @@
-import * as React from 'react';
 import * as S from './styles';
-import { FontAwesome5 } from '@expo/vector-icons'; 
-import Toast from 'react-native-toast-message';
+import * as React from 'react';
+import { ActivityIndicator } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 type FloatButtonProps = {
     onPress: () => void
+    disabled: boolean
+    loading: boolean
 }
 
-const FloatButton = ({ onPress }: FloatButtonProps) => {
+const FloatButton = ({ onPress, disabled, loading }: FloatButtonProps) => {
 
-    return(
+    return (
         <S.MainContainer
             activeOpacity={0.9}
             onPress={onPress}
             testID='MAINBUTTON'
+            disabled={disabled}
         >
-            <FontAwesome5 testID="PLUSICON" name="plus" size={22} color="black" />
+            {
+                loading
+                    ?
+                    <ActivityIndicator color={'#636363'}/>
+                    :
+                    <FontAwesome5 testID="PLUSICON" name="plus" size={22} color="black" />
+            }
         </S.MainContainer>
     )
 }

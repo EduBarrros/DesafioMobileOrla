@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlatList, Text, View } from "react-native";
 
+
 export const MainContainer = styled(View)`
     
 `

@@ -29,7 +29,7 @@ describe("Header", () => {
 
         const onPressMock = jest.fn()
 
-        const {getByTestId} = render(<Header sortType='UP' onSortPress={() => onPressMock}/>)
+        const {getByTestId} = render(<Header sortType='UP' onSortPress={() => onPressMock()}/>)
 
         fireEvent.press(getByTestId("SORTBUTTON"))
 
