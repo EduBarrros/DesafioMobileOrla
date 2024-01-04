@@ -13,8 +13,9 @@ const FloatButton = ({ onPress }: FloatButtonProps) => {
         <S.MainContainer
             activeOpacity={0.9}
             onPress={onPress}
+            testID='MAINBUTTON'
         >
-            <FontAwesome5 name="plus" size={22} color="black" />
+            <FontAwesome5 testID="PLUSICON" name="plus" size={22} color="black" />
         </S.MainContainer>
     )
 }
