@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import FloatButton from '..';
+import EmptyState from '..';
 
-describe("FloatButton", () => {  
+describe("EmptyState", () => {  
     test("The component rendered", () => {
-        render(<FloatButton onPress={() => console.log('Click')} />)
+        render(<EmptyState />)
     })
 })

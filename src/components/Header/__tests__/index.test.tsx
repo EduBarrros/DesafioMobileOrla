@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import FloatButton from '..';
+import Header from '..';
 
-describe("FloatButton", () => {  
+describe("Header", () => {  
     test("The component rendered", () => {
-        render(<FloatButton onPress={() => console.log('Click')} />)
+        render(<Header sortType='UP' onSortPress={() => console.log('Click')}/>)
     })
 })
