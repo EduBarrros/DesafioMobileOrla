@@ -1,6 +1,6 @@
 # Desafio Mobile - Orla
 
-Este é um projeto desenvolvido como parte do Desafio Mobile para a empresa Orla.
+Este projeto foi desenvolvido como parte do Desafio Mobile para a empresa Orla.
 
 ## Descrição
 
@@ -8,28 +8,52 @@ O Desafio Mobile consiste em criar um aplicativo móvel usando React Native para
 
 ### Requisitos:
 
-* A lista de dicas deve ser gerada consumindo a API disponível no site: [API Advice Slip](https://api.adviceslip.com/#endpoint-random)
+- A lista de dicas deve ser gerada consumindo a API disponível no site: [API Advice Slip](https://api.adviceslip.com/#endpoint-random)
   
-* Ao clicar no botão de adicionar, deve procurar uma dica da API e adicionar um cartão com a mesma.
+- Ao clicar no botão de adicionar, deve procurar uma dica da API e adicionar um cartão com a mesma.
 
-* Caso a dica já esteja na lista, deve ser mostrado um toast de que a dica já existe.
+- Caso a dica já esteja na lista, deve ser mostrado um toast de que a dica já existe.
 
-* A barra de pesquisa deve procurar por dicas que contenham o texto digitado.
+- A barra de pesquisa deve procurar por dicas que contenham o texto digitado.
 
-* A header deve conter o título do app e um botão para alterar a ordem em que os elementos aparecem na lista.
+- A header deve conter o título do app e um botão para alterar a ordem em que os elementos aparecem na lista.
 
-* Para trabalhar com o visual da página, utilize a biblioteca do Styled Components: [styled-components](https://styled-components.com/)
+- Para trabalhar com o visual da página, utilize a biblioteca do Styled Components: [styled-components](https://styled-components.com/)
 
-* Deve ser feito em React Native.
+- Deve ser feito em React Native.
 
 ### Opcional:
 
-* Implementar testes unitários.
+- Implementar testes unitários.
 
+## Tecnologias Utilizadas
+
+- React Native
+- EXPO
+- React Navigation
+- Styled-Components
+- AXIOS
+- EXPO icons
+- JEST
+- React Native Test Library
 
 ## Instalação
 
 Siga estas instruções para configurar e executar o projeto localmente:
+
+Certifique-se de ter o Expo CLI instalado globalmente.
+
+- Yarn:
+
+  ```bash
+  yarn global add expo-cli
+  ```
+
+- NPM:
+
+  ```bash
+  npm install -g expo-cli
+  ```
 
 1. Clone o repositório:
 
@@ -57,29 +81,56 @@ Siga estas instruções para configurar e executar o projeto localmente:
 
 4. Inicie o aplicativo com o Expo:
 
+   - EXPO
+
    ```bash
    expo start
    ```
 
-   Certifique-se de ter o Expo CLI instalado globalmente (`npm install -g expo-cli`).
+   - Yarn:
 
-   Use o aplicativo Expo Go no seu dispositivo móvel ou um emulador para visualizar o aplicativo.
+   ```bash
+   yarn start
+   ```
+
+   - NPM:
+
+   ```bash
+   npm start
+   ```
+
+> Utilize o aplicativo Expo GO para poder visualizar em dispositivos iOS sem a necessidade de um MAC, basta ler o QR code gerado após executar o projeto.
 
 ## Testes
 
-Para rodar os testes execute:
+Para rodar os testes, execute:
 
-* Yarn:
+- Yarn:
 
-```bash
-yarn test
-```
+  ```bash
+  yarn test
+  ```
 
-* NPM:
+- NPM:
 
-```bash
-npm test
-```
-   
+  ```bash
+  npm test
+  ```
+
+Para visualizar o coverage de testes do sistema:
+
+- Yarn:
+
+  ```bash
+  yarn test --coverage
+  ```
+
+- NPM:
+
+  ```bash
+  npm test --coverage
+  ```
+
 ---
-Desenvolvido por Eduardo Barros - eduardodeoliveirabarros@gmail.com - www.linkedin.com/in/eduardo-de-oliveira-barros-b5a2491b5
+
+Desenvolvido por Eduardo Barros - eduardodeoliveirabarros@gmail.com - [LinkedIn](www.linkedin.com/in/eduardo-de-oliveira-barros-b5a2491b5)
