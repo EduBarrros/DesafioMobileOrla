@@ -21,7 +21,7 @@ const FloatButton = ({ onPress, disabled, loading }: FloatButtonProps) => {
             {
                 loading
                     ?
-                    <ActivityIndicator color={'#636363'}/>
+                    <ActivityIndicator testID='LOADING' color={'#636363'}/>
                     :
                     <FontAwesome5 testID="PLUSICON" name="plus" size={22} color="black" />
             }
