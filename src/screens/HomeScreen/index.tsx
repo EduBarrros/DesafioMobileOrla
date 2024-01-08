@@ -88,7 +88,7 @@ const HomeScreen = () => {
 
     return (
         <S.MainContainer>
-            <StatusBar style='auto' />
+            <StatusBar style='dark' />
             <Header
                 sortType={sortType}
                 onSortPress={() => setSortType((prevState) => prevState === "UP" ? 'DOWN' : "UP")}
